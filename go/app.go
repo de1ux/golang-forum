@@ -16,5 +16,7 @@ func init() {
 	r.HandleFunc("/post/{resourceId}", PostHandler)
 	r.HandleFunc("/posts/", PostListHandler)
 
+	r.HandleFunc("/", FrontPageHandler)
+
 	http.Handle("/", r)
 }

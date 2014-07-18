@@ -10,6 +10,11 @@ type Board struct {
 	Topics *[]Topic `datastore:"-"`
 }
 
+type RequiredBoardParams struct {
+	Name string
+}
+
+
 type Topic struct {
 	Title       string `datastore:"title"`
 	Posts       []*Post

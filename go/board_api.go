@@ -40,9 +40,11 @@ func GetBoardByID(context appengine.Context, ID string) Board {
 
 func CreateBoard(context appengine.Context, name string) Board {
     var board Board
+    board.Name = name
 
     key := datastore.NewKey(context, "Board", "", 0, nil)
-    datastore.Put(context, key, &board)
+    datastore.Put(context, key, board)
+
 
     return board
 }

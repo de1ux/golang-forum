@@ -26,7 +26,7 @@ func TestGetBoards(t *testing.T) {
 	datastore.Put(context, board2Key, &board2)
 	datastore.Put(context, board3Key, &board3)
 
-	// compensate for eventual consistency
+	// eventual consistency takes time
 	time.Sleep(400 * time.Millisecond)
 
 	boards := GetBoards(context)
